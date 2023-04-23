@@ -1,0 +1,43 @@
+.preview
+  position: relative
+
+  &__close
+    cursor: pointer
+    position: absolute
+    top: 0
+    margin: 0
+    color: white
+
+  &__toolbarRight
+    position: absolute
+    right: 0
+    display: flex
+    flex-direction: column
+    color: white
+    margin: 5px
+
+    .MuiSvgIcon-root
+      font-size: 20px !important
+      margin-bottom: 8px
+      cursor: pointer
+
+  &__footer
+    position: absolute
+    bottom: 0
+    right: -25px
+    transform: translate(-50%, -50%)
+    display: flex
+    align-items: center
+    background-color: yellow
+    color: black
+    justify-content: space-evenly
+    border-radius: 30px
+    padding: 7px
+    cursor: pointer
+
+    & h2
+      font-size: 8px
+      margin-right: 3px
+
+    &__sendIcon
+      font-size: 10px !important

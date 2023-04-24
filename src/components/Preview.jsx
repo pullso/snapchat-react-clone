@@ -15,12 +15,14 @@ import {getDownloadURL, ref, uploadString} from 'firebase/storage'
 import {db, storage} from "../firebase.js";
 import {v4 as uuid} from 'uuid';
 import {addDoc, collection, serverTimestamp} from "firebase/firestore";
+import {selectUser} from "../features/appSlice.js";
 
 
 export const Preview = () => {
   const cameraImage = useSelector(selectCameraImage)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const user = useSelector(selectUser)
 
   useEffect(() => {
     if (!cameraImage) {
@@ -38,9 +40,9 @@ export const Preview = () => {
     const url = await getDownloadURL(data.ref)
     await addDoc(collection(db, 'posts'), {
       imageUrl: url,
-      username: 'Pavel',
+      username: user?.username,
       read: false,
-      // profilePic:
+      profilePic: user?.profilePic,
       timestamp: serverTimestamp()
     })
     navigate('/chats')

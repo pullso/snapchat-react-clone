@@ -29,15 +29,23 @@ function App() {
   return (
     <>
       <div className="app">
+        <div className="app__logo">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Fsnapchat%2Fsnapchat_PNG42.png&f=1&nofb=1&ipt=645ec5c6d780a41d0ee47b8a43fc083c711b1d6e0e170763ad2bc19816383d79&ipo=images"
+            alt="logo"/>
+        </div>
         <Router>
           {!user ? <Login/> :
             <div className="app__body">
-              <Routes>
-                <Route path="/" element={<WebcamCapture/>}/>
-                <Route path="/preview" element={<Preview/>}/>
-                <Route path="/chats" element={<Chats/>}/>
-                <Route path="/view" element={<ChatView/>}/>
-              </Routes>
+
+              <div className="app__bodyBackground">
+                <Routes>
+                  <Route path="/" element={<WebcamCapture/>}/>
+                  <Route path="/preview" element={<Preview/>}/>
+                  <Route path="/chats" element={<Chats/>}/>
+                  <Route path="/view" element={<ChatView/>}/>
+                </Routes>
+              </div>
             </div>
           }
 

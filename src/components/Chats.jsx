@@ -31,7 +31,7 @@ export const Chats = () => {
         </div>
         <div className="chats__posts">
           {
-            posts.map(({id, data: {profilePic, username, timestamp, read}}) => (
+            posts.map(({id, data: {profilePic, username, imageUrl, timestamp, read}}) => (
               <Chat
                 key={id}
                 id={id}
@@ -39,6 +39,7 @@ export const Chats = () => {
                 profilePic={profilePic}
                 username={username}
                 timestamp={timestamp}
+                imageUrl={imageUrl}
               />)
             )
           }
